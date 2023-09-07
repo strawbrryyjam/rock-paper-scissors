@@ -5,39 +5,36 @@ function getComputerChoice() {
     let computer = (choices[computerChoice]);
     let computer_second = computer.toLowerCase();
 
-    if (computer_second == "rock") {
-        computer_second = 1;
-        return computer_second;
-
-    } else if (computer_second == "scissors") {
-        computer_second = 2;
-        return computer_second;
-
-    } else if (computer_second == "paper") {
-        computer_second = 3;
-        return computer_second;
-    }
+    return computer_second;
 }
 
 function playerChoice(playerSelection, getComputerChoice) {
     let playerChoice = playerSelection.toLowerCase();
 
-    if (playerChoice == "rock") {
-        playerChoice = 1;
-
-    } else if (playerChoice == "scissors") {
-        playerChoice = 2;
-
-    } else if (playerChoice == "paper") {
-        playerChoice = 3;
-    }
-
-    console.log(playerChoice, getComputerChoice);
+    console.log(playerChoice, getComputerChoice)
 
     if (playerChoice == getComputerChoice) {
-        console.log("PLEASE");
+        console.log("it's a tie!")
+    } else if (playerChoice == "rock" && getComputerChoice == "scissors") {
+        console.log("rock beats scissors. YOU WIN!")
+
+    } else if (playerChoice == "rock" && getComputerChoice == "paper") {
+        console.log("paper beats rock. YOU LOSE")
+
+    } else if (playerChoice == "scissors" && getComputerChoice == "rock") {
+        console.log("rock beats scissors. YOU LOSE")
+
+    } else if (playerChoice == "scissors" && getComputerChoice == "paper") {
+        console.log("scissors beats paper. YOU WIN!")
+
+    } else if (playerChoice == "paper" && getComputerChoice == "rock") {
+        console.log("paper beats rock. YOU WIN!")
+        
+    } else if (playerChoice == "paper" && getComputerChoice == "scissors") {
+        console.log("scissors beats paper. YOU LOSE.")
     }
+
 }
 
-playerChoice("rock", getComputerChoice())
+playerChoice("paper", getComputerChoice())
 
